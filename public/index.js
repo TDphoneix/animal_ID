@@ -65,6 +65,7 @@ async function loadQuiz(){
 
     if(res.ok){
         let quizjson = await res.json()
+        console.log(quizjson)
         renderQuiz(quizjson)
     }
 }
