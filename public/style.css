@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    text-align: center;
+    color: #1f1f1f;
+}
+
+main {
+    width: min(90%, 500px);
+    margin:5vh auto;
+    margin-bottom:20vh;
+    border:1px solid #dadada;
+    border-radius: 8px;
+}
+
+.selection {
+    width: 100%;
+    padding:2rem;
+}
+
+#group-select {
+    font-size:1rem;
+    width:100%;
+    border-radius: 10px;
+    color: #1f1f1f;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+select {
+    width:100%;
+    font-size:1.2rem;
+    color: rgb(37, 37, 37);
+    padding: 8px;
+    background:none;
+    margin-bottom: 1rem;
+    border:0;
+    border-bottom:1.5px solid #696969;
+    appearance: none;
+}
+
+.add {
+    font-size: 1rem;
+    width:20%;
+    margin-left:80%;
+    border:1.5px solid #24e67b;
+    color: #24e67b;
+    background:none;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+.selected-groups {
+    margin:2rem 0;
+}
+
+h3 {
+    font-size:1rem;
+    color: #1f1f1f;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1rem;
+}
+
+.selected-groups-list li, .result-selected-groups li {
+    list-style-type: none;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    margin-right:1rem;
+    padding:5px 7px;
+    border:0.5px solid #979797;
+    color: #414141;
+    font-size:0.8rem;
+}
+
+.clear {
+    float: right;
+    padding-left: 7px;
+    color: #949292;
+    font-weight: 100;
+}
+
+
+.start-btn {
+    width:100%;
+    font-size:1.2rem;
+    padding:7px;
+    background:none;
+    font-weight: bold;
+    border-radius: 10px;
+    border:2px solid #3df79a;
+    background-color: #3df79a;
+    color: white;
+}
+
+.id-quiz {
+    width: 100%;
+}
+
+.controller {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.previous {
+    background: none;
+    font-size:1.2rem;
+    color: #414141;
+    border:0;
+    margin-right:auto;
+}
+
+.next {
+    background: none;
+    font-size:1.2rem;
+    color: #414141;
+    border:0;
+    margin-left:auto;
+}
+
+.controller p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.unknown-img {
+    position: relative;
+}
+
+.unknown-img img {
+    width:100%;
+    height:450px;
+}
+
+.unknown-img p {
+    position: absolute;
+    text-align:center;
+    width:100%;
+    bottom: 1rem;
+    font-size:1.5rem;
+    color: white;
+    padding:8px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.gg {
+    padding:2em;
+}
+
+.usrinp {
+    position: relative;
+}
+
+.usrinp input {
+    width:100%;
+    padding:8px;
+    background:none;
+    font-size:1.2rem;
+    color: #414141;
+    font-family: 'Courier New', Courier, monospace;
+    border:1px solid #949292;
+    margin-bottom:2rem;
+}
+
+#status {
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    top:10px;
+}
+
+.right-guess {
+    color:#24e67b;
+}
+
+.wrong-guess {
+    color: red;
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.guess-btn {
+    width: 100%;
+    padding:8px;
+    font-size:1rem;
+    color: black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border:2px solid black;
+    margin-right:2rem;
+    margin-bottom:1rem;
+}
+
+.restart-btn {
+    align-self:flex-end;
+    margin-right:2rem;
+    background: none;
+    border:0;
+    font-size:1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    color: #696969;
+}
+
+.right-guess {
+    border-color: #24e67b;
+    border-width: 3px;
+}
+
+.resultbox {
+    padding: 2rem;
+}
+
+.result-selected-groups {
+    margin-bottom: 1.5rem;
+}
+
+.groups {
+    font-size:1.2rem;
+    margin-bottom:1rem;
+}
+
+.result-total-specimens {
+    margin-bottom: 1rem;
+}
+
+.result-identified-specimens {
+    margin-bottom: 2rem;
+}
+
+.restart {
+    background: none;
+    padding:8px 10px;
+    border:1px solid black;
+    font-weight: bold;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Identification App</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/27b397839b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Animals Identification</h1>
+    </header>
+    <main>
+        <div class="selection">
+            <label for="group" id="group-select">Select animal Group</label>
+            <select name="group">
+                <option value="" id="blank" style="display: none;"> </option>
+                <option value="papilionidae">Butterflies - Papilionidae</option>
+            </select>
+            <button class="add">add</button>
+            <div class="selected-groups">
+                <ul class="selected-groups-list"></ul>
+            </div>
+            <button class="start-btn">start</button>
+        </div>
+        <div class="id-quiz">
+            
+        </div>
+    </main>
+</body>
+<script src="./index.js"></script>
+</html>
