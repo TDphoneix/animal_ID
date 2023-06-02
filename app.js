@@ -29,12 +29,12 @@ app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
     getGroupInfo(data).then(value=>{
-        res.json(value)
+        res.send(value)
     })
 })
 
 app.post('/test',(req,res)=>{
-    res.send("hello test from back")
+    res.json({hello : 'from back'})
 })
 
 app.get('/quizinfo',(req,res)=>[
