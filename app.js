@@ -28,10 +28,9 @@ app.get("/",(req,res)=>{
 app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
-    res.send([
-        {name:'common mormon', src: 'common_mormon.jpg'},
-        {name: 'common lime', src: 'common_lime.jpg'}
-    ])
+    getGroupInfo(data).then(value=>{
+        res.send(value)
+    })
 })
 
 app.post('/test',(req,res)=>{
