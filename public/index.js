@@ -114,19 +114,14 @@ function renderQuiz(quizdata){
         guessed = true
     })
 
-    nextbtn.addEventListener('click',async (e)=>{
+    nextbtn.addEventListener('click', (e)=>{
         if(currentSpecimen == specimenNumbers){
             renderResult()
             return
         }
 
         currentSpecimen++
-        await renderSpecimen()
-        progress.textContent = `${currentSpecimen+1} - ${specimenNumbers+1}`
-        guessed = false
-        rightGuessStatus.style.visibility = 'hidden'
-        wrongGuessStatus.style.visibility = 'hidden'
-        usrinput.className = ''
+        renderSpecimen()
     })
     prebtn.addEventListener('click',(e)=>{
         if(currentSpecimen == 0){
@@ -136,12 +131,20 @@ function renderQuiz(quizdata){
 
     restartbtn2.addEventListener('click',restartQuiz)
 
-    async function renderSpecimen(){
+    function renderSpecimen(){
         image.setAttribute('src',`/images/${quizdata[currentSpecimen].src}`)
+        image.addEventListener('load',renderSpecimenInfo)
+    }
+
+    function renderSpecimenInfo(e){
         id.textContent = quizdata[currentSpecimen].name.toUpperCase()
         id.style.visibility = 'hidden'
         usrinput.value = ""
-        return 1;
+        progress.textContent = `${currentSpecimen+1} - ${specimenNumbers+1}`
+        guessed = false
+        rightGuessStatus.style.visibility = 'hidden'
+        wrongGuessStatus.style.visibility = 'hidden'
+        usrinput.className = ''
     }
 
     function renderResult(){
