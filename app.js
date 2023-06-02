@@ -28,7 +28,11 @@ app.get("/",(req,res)=>{
 app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
-    testDB()
+
+    getGroupInfo(data).then(value=>{
+        res.json(value)
+    })
+    
 })
 
 async function testDB(){
@@ -56,6 +60,8 @@ app.listen(5000,()=>{
 })
 
 async function getGroupInfo(data){
+    await client.connect()
+    console.log("successfully connected!!")
     const db = client.db('animalgroups')
     const coll = db.collection('butterflies')
     let result_data = []
