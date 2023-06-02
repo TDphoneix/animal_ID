@@ -30,6 +30,8 @@ app.post("/start", (req,res)=>{
     console.log(data);
     getGroupInfo(data).then(value=>{
         res.send(value)
+    }).catch(err=>{
+        console.log("couldnt connect to database")
     })
 })
 
