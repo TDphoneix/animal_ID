@@ -15,7 +15,10 @@ app.use(express.json())
 app.set('view engine','ejs')
 app.set('views', './public/views')
 app.use(cors())
-app.options('*',cors)
+app.options('*',cors({
+    methods : ['GET','POST'],
+    allowedHeaders : ['Content-Type']
+}))
 
 
 app.get("/",(req,res)=>{
