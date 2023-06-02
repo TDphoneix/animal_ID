@@ -114,15 +114,15 @@ function renderQuiz(quizdata){
         guessed = true
     })
 
-    nextbtn.addEventListener('click',(e)=>{
+    nextbtn.addEventListener('click',async (e)=>{
         if(currentSpecimen == specimenNumbers){
             renderResult()
             return
         }
 
         currentSpecimen++
+        await renderSpecimen()
         progress.textContent = `${currentSpecimen+1} - ${specimenNumbers+1}`
-        renderSpecimen()
         guessed = false
         rightGuessStatus.style.visibility = 'hidden'
         wrongGuessStatus.style.visibility = 'hidden'
@@ -136,11 +136,12 @@ function renderQuiz(quizdata){
 
     restartbtn2.addEventListener('click',restartQuiz)
 
-    function renderSpecimen(){
+    async function renderSpecimen(){
         image.setAttribute('src',`/images/${quizdata[currentSpecimen].src}`)
         id.textContent = quizdata[currentSpecimen].name.toUpperCase()
         id.style.visibility = 'hidden'
         usrinput.value = ""
+        return 1;
     }
 
     function renderResult(){
