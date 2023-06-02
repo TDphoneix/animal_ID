@@ -5,7 +5,7 @@ const multer =require('multer')
 const { MongoClient } = require('mongodb')
 const cors = require('cors')
 
-const uri = process.env.MONGOURI
+const uri = "mongodb+srv://borshon0101:bindatp@animalsbd.im8kuiv.mongodb.net/?retryWrites=true&w=majority"
 const upload = multer()
 const app = express();
 const client = new MongoClient(uri)
