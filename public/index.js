@@ -28,7 +28,7 @@ addbtn.addEventListener('click',async (e)=>{
         headers : {
             'Content-Type' : 'application/json'
         },
-        body : {name : 'from front'}
+        body : JSON.stringify({name : 'from front'})
     })
 
     let testtxt = await testres.text()
