@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const multer =require('multer')
 const { MongoClient } = require('mongodb')
+const cors = require('cors')
 
 const uri = process.env.MONGOURI
 const upload = multer()
@@ -13,6 +14,8 @@ app.use(express.static("./public"))
 app.use(express.json())
 app.set('view engine','ejs')
 app.set('views', './public/views')
+app.use(cors())
+app.options('*',cors())
 
 
 app.get("/",(req,res)=>{

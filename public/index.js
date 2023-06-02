@@ -33,6 +33,7 @@ startbtn.addEventListener('click',async (e)=>{
     let res = await fetch('/quizinfo')
     if(res.ok){
         let quizhtml = await res.text();
+        console.log(quizhtml)
         quiz.innerHTML = quizhtml;
         loadQuiz()
     }
@@ -52,21 +53,25 @@ async function loadQuiz(){
         count : 30
     }))
 
-    let res = await fetch('/start',{
-        method : 'POST',
-        body : JSON.stringify({
-            groups : selectedGroups,
-            count : 30
-        }),
-        headers : {
-            'Content-Type' : 'application/json'
-        }
-    })
+    try{
+        let res = await fetch('/start',{
+            method : 'POST',
+            body : JSON.stringify({
+                groups : selectedGroups,
+                count : 30
+            }),
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
 
-    if(res.ok){
-        let quizjson = await res.json()
-        console.log(quizjson)
-        renderQuiz(quizjson)
+        if(res.ok){
+            let quizjson = await res.json()
+            console.log(quizjson)
+            renderQuiz(quizjson)
+        }
+    }catch(er){
+        console.log('error occured during fetching json')
     }
 }
 
