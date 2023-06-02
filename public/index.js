@@ -61,7 +61,7 @@ async function loadQuiz(){
                 count : 30
             }),
             headers : {
-                'Content-Type' : 'application/json'
+                'Content-Type' : 'text/plain'
             }
         })
 
