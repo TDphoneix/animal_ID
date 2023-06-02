@@ -18,21 +18,7 @@ addbtn.addEventListener('click',async (e)=>{
         return;
     }
     selectedGroups.push(selectedGroup)
-
-    
-
     document.querySelector('.selected-groups-list').append(createGroupName(selectedGroup))
-
-    let testres = await fetch('/test',{
-        method : 'POST',
-        headers : {
-            'Content-Type' : 'application/json'
-        },
-        body : JSON.stringify({name : 'from front'})
-    })
-
-    let testtxt = await testres.text()
-    console.log(testtxt)
 })
 
 
@@ -58,12 +44,6 @@ function clearGroup(e){
 }
 
 async function loadQuiz(){
-
-    console.log(JSON.stringify({
-        groups : selectedGroups,
-        count : 30
-    }))
-
     try{
         let res = await fetch('/start',{
             method : 'POST',
@@ -113,6 +93,7 @@ function renderQuiz(quizdata){
     resultbox.style.display = 'none'
     rightGuessStatus.style.visibility = 'hidden'
     wrongGuessStatus.style.visibility = 'hidden'
+    progress.textContent = `${currentSpecimen+1} - ${specimenNumbers+1}`
 
     guessbtn.addEventListener('click',(e)=>{
         if(guessed){
@@ -120,12 +101,14 @@ function renderQuiz(quizdata){
         }
         let guess = usrinput.value
         
-        if (guess.toLowerCase() === id.textContent.toLowerCase()){
+        if (guess.replaceAll(' ','').replaceAll('-','').toLowerCase() === id.textContent.replaceAll(' ','').replaceAll('-','').toLowerCase()){
             right_guess++
             id.style.visibility = 'visible'
+            usrinput.classList.add('right-guess')
             rightGuessStatus.style.visibility = 'visible'
         } else {
             id.style.visibility = 'visible'
+            usrinput.classList.add('wrong-guess')
             wrongGuessStatus.style.visibility = 'visible'
         }
         guessed = true
@@ -138,10 +121,12 @@ function renderQuiz(quizdata){
         }
 
         currentSpecimen++
+        progress.textContent = `${currentSpecimen+1} - ${specimenNumbers+1}`
         renderSpecimen()
         guessed = false
         rightGuessStatus.style.visibility = 'hidden'
         wrongGuessStatus.style.visibility = 'hidden'
+        usrinput.className = ''
     })
     prebtn.addEventListener('click',(e)=>{
         if(currentSpecimen == 0){
@@ -153,7 +138,7 @@ function renderQuiz(quizdata){
 
     function renderSpecimen(){
         image.setAttribute('src',`/images/${quizdata[currentSpecimen].src}`)
-        id.textContent = quizdata[currentSpecimen].name
+        id.textContent = quizdata[currentSpecimen].name.toUpperCase()
         id.style.visibility = 'hidden'
         usrinput.value = ""
     }

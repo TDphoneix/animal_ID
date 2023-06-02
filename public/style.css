@@ -17,11 +17,15 @@ h1 {
 }
 
 main {
-    width: min(90%, 500px);
+    width: min(90%, 400px);
     margin:5vh auto;
     margin-bottom:20vh;
     border:1px solid #dadada;
     border-radius: 8px;
+}
+
+button:active {
+    transform:scale(1.01,1.05)
 }
 
 .selection {
@@ -43,7 +47,7 @@ main {
 
 select {
     width:100%;
-    font-size:1.2rem;
+    font-size:1rem;
     color: rgb(37, 37, 37);
     padding: 8px;
     background:none;
@@ -145,23 +149,23 @@ h3 {
 
 .unknown-img img {
     width:100%;
-    height:450px;
+    height:300px;
 }
 
 .unknown-img p {
     position: absolute;
     text-align:center;
     width:100%;
-    bottom: 1rem;
-    font-size:1.5rem;
+    bottom: 0.8rem;
+    font-size:1.2rem;
     color: white;
     padding:8px;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.192);
+    background-color: rgba(0, 0, 0, 0.322);
 }
 
 .gg {
-    padding:2em;
+    padding:1.5em;
 }
 
 .usrinp {
@@ -176,7 +180,7 @@ h3 {
     color: #414141;
     font-family: 'Courier New', Courier, monospace;
     border:1px solid #949292;
-    margin-bottom:2rem;
+    margin-bottom:1.5rem;
 }
 
 #status {
@@ -190,8 +194,18 @@ h3 {
     color:#24e67b;
 }
 
+input.right-guess {
+    border-color:#24e67b;
+    border-width: 2px;
+}
+
 .wrong-guess {
     color: red;
+}
+
+input.wrong-guess {
+    border-color:red;
+    border-width: 2px;
 }
 
 .btns {
@@ -210,50 +224,42 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
     border:2px solid black;
-    margin-right:2rem;
+    margin-right:1.5rem;
     margin-bottom:1rem;
-}
-
-.restart-btn {
-    align-self:flex-end;
-    margin-right:2rem;
-    background: none;
-    border:0;
-    font-size:1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    color: #696969;
-}
-
-.right-guess {
-    border-color: #24e67b;
-    border-width: 3px;
 }
 
 .resultbox {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .result-selected-groups {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .groups {
-    font-size:1.2rem;
-    margin-bottom:1rem;
+    font-size:1rem;
+    margin-bottom:0.5rem;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 .result-total-specimens {
     margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .result-identified-specimens {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .restart {
     background: none;
+    margin-left: 80%;
     padding:8px 10px;
-    border:1px solid black;
+    border:2px solid black;
     font-weight: bold;
 }

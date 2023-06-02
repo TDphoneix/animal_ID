@@ -15,11 +15,12 @@ app.use(express.json())
 app.set('view engine','ejs')
 app.set('views', './public/views')
 app.use(cors())
+
+
 app.options('*',cors({
     methods : ['GET','POST'],
     allowedHeaders : ['Content-Type']
 }))
-
 
 app.get("/",(req,res)=>{
     res.status(300).redirect('/home.html')
@@ -35,21 +36,6 @@ app.post("/start", (req,res)=>{
     
 })
 
-async function testDB(){
-    try {
-    await client.connect()
-    console.log("successfully connected!!")
-    }
-    catch(err){
-        console.log("error occured during connection")
-    }
-
-}
-
-app.post('/test',(req,res)=>{
-    res.json({hello : 'from back'})
-})
-
 app.get('/quizinfo',(req,res)=>[
     res.render('quizbox')
 ])
@@ -59,9 +45,12 @@ app.listen(5000,()=>{
     console.log(`app active at http://localhost:5000/`)
 })
 
+
+
 async function getGroupInfo(data){
     await client.connect()
     console.log("successfully connected!!")
+
     const db = client.db('animalgroups')
     const coll = db.collection('butterflies')
     let result_data = []
@@ -78,7 +67,7 @@ async function getGroupInfo(data){
         result_data = result_data.concat(obj.members);
     }
 
-    let randomNumbers = genRandomNumbers(0, result_data.length - 1, 2)
+    let randomNumbers = genRandomNumbers(0, result_data.length - 1, 15)
 
     for(r of randomNumbers){
         randomized_result_data.push(result_data[r])
