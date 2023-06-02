@@ -10,7 +10,7 @@ let selectedGroups = []
 quiz.style.display = 'none'
 document.querySelector('#blank').selected = true
 
-addbtn.addEventListener('click',(e)=>{
+addbtn.addEventListener('click',async (e)=>{
     e.preventDefault()
     let selectedGroup = document.querySelector('select').value;
 
@@ -22,6 +22,17 @@ addbtn.addEventListener('click',(e)=>{
     
 
     document.querySelector('.selected-groups-list').append(createGroupName(selectedGroup))
+
+    let testres = await fetch('/test',{
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'text/plain'
+        },
+        body : "hello testing"
+    })
+
+    let testtxt = await testres.text()
+    console.log(testtxt)
 })
 
 
@@ -61,14 +72,14 @@ async function loadQuiz(){
                 count : 30
             }),
             headers : {
-                'Content-Type' : 'text/plain'
+                'Content-Type' : 'application/json'
             }
         })
 
         if(res.ok){
-            let quizjson = await res.text()
+            let quizjson = await res.json()
             console.log(quizjson)
-            renderQuiz(JSON.parse(quizjson))
+            renderQuiz(quizjson)
         }
     }catch(er){
         console.log('error occured during fetching json')

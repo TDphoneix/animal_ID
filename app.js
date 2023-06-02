@@ -15,7 +15,7 @@ app.use(express.json())
 app.set('view engine','ejs')
 app.set('views', './public/views')
 app.use(cors())
-app.options('*',cors())
+app.options('*',cors)
 
 
 app.get("/",(req,res)=>{
@@ -26,8 +26,12 @@ app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
     getGroupInfo(data).then(value=>{
-        res.send(JSON.stringify(value))
+        res.json(value)
     })
+})
+
+app.post('/test',(req,res)=>{
+    res.send("hello test from back")
 })
 
 app.get('/quizinfo',(req,res)=>[
