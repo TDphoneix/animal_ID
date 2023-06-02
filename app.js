@@ -26,7 +26,7 @@ app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
     getGroupInfo(data).then(value=>{
-        res.json(value)
+        res.send(JSON.stringify(value))
     })
 })
 

@@ -66,9 +66,9 @@ async function loadQuiz(){
         })
 
         if(res.ok){
-            let quizjson = await res.json()
+            let quizjson = await res.text()
             console.log(quizjson)
-            renderQuiz(quizjson)
+            renderQuiz(JSON.parse(quizjson))
         }
     }catch(er){
         console.log('error occured during fetching json')
