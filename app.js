@@ -28,12 +28,19 @@ app.get("/",(req,res)=>{
 app.post("/start", (req,res)=>{
     let data = req.body;
     console.log(data);
-    getGroupInfo(data).then(value=>{
-        res.send(value)
-    }).catch(err=>{
-        console.log("couldnt connect to database")
-    })
+    testDB()
 })
+
+async function testDB(){
+    try {
+    await client.connect()
+    console.log("successfully connected!!")
+    }
+    catch(err){
+        console.log("error occured during connection")
+    }
+
+}
 
 app.post('/test',(req,res)=>{
     res.json({hello : 'from back'})
