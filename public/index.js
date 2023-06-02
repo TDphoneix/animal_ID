@@ -26,9 +26,9 @@ addbtn.addEventListener('click',async (e)=>{
     let testres = await fetch('/test',{
         method : 'POST',
         headers : {
-            'Content-Type' : 'text/plain'
+            'Content-Type' : 'application/json'
         },
-        body : "hello testing"
+        body : {name : 'from front'}
     })
 
     let testtxt = await testres.text()
