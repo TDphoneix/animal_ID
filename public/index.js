@@ -132,7 +132,7 @@ function renderQuiz(quizdata){
     restartbtn2.addEventListener('click',restartQuiz)
 
     function renderSpecimen(){
-        image.setAttribute('src',`/images/${quizdata[currentSpecimen].src}`)
+        image.setAttribute('src',quizdata[currentSpecimen].src)
         image.addEventListener('load',renderSpecimenInfo)
     }
 

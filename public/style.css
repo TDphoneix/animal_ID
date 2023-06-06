@@ -231,6 +231,8 @@ input.wrong-guess {
 
 .resultbox {
     padding: 1.5rem;
+    border-top:10px solid #3dc2f7;
+    border-radius: 8px;
 }
 
 .result-selected-groups {
@@ -238,7 +240,7 @@ input.wrong-guess {
 }
 
 .groups {
-    font-size:1rem;
+    font-size:1.2rem;
     margin-bottom:0.5rem;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -261,8 +263,9 @@ input.wrong-guess {
     background: none;
     margin-left: 80%;
     padding:8px 10px;
-    border:2px solid black;
+    border:2px solid #3dc2f7;
     font-weight: bold;
+    color: #3dc2f7;
 }
 
 

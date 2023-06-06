@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cloudinary = require('cloudinary').v2
 
 const express = require('express')
 const multer =require('multer')
@@ -9,6 +10,12 @@ const uri = process.env.MONGOURI
 const upload = multer()
 const app = express();
 const client = new MongoClient(uri)
+
+cloudinary.config({
+    cloud_name: "dbpkw1glj",
+    api_key: "989942999537629",
+    api_secret: "bJ-cjb33n28je-XKA1LIdQEzpvw"
+  });
 
 app.use(express.static("./public"))
 app.use(express.json())
@@ -73,8 +80,15 @@ async function getGroupInfo(data){
         randomized_result_data.push(result_data[r])
     }
     console.log(randomized_result_data)
-    return randomized_result_data
-    
+    randomized_result_data.forEach(a=>{
+        const url = cloudinary.url(a.src.split('.')[0], {
+            width: 400,
+            height: 300,
+            Crop: 'fill'
+          });
+        a.src = url
+    })
+    return randomized_result_data    
 }
 
 function genRandomNumbers(min, max, count){
