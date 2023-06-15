@@ -1,4 +1,4 @@
-##Animal ID Application
+## Animal ID Application
 ---
 Visit [Animal ID](https://animalsid.onrender.com) to use the application
 
