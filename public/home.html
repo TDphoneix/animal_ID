@@ -14,13 +14,23 @@
     </header>
     <main>
         <div class="selection">
-            <label for="group" id="group-select">Select animal Group</label>
-            <select name="group">
-                <option value="" id="blank" style="display: none;"> </option>
-                <option value="papilionidae">Butterflies - Papilionidae</option>
-                <option value="pieridae">Butterflies - Pieridae</option>
-            </select>
-            <button class="add">add</button>
+            <label for="group"class="labels">Select animal Group</label>
+            <div class="select-option">
+                <select name="group">
+                    <option value="" id="blank" style="display: none;"> </option>
+                    <option value="papilionidae">Butterflies - Papilionidae</option>
+                    <option value="pieridae">Butterflies - Pieridae</option>
+                </select>
+                <button class="add">add</button>
+            </div>
+            <div class="select-option">
+                <label for="count" class="labels">Number of specimens</label>
+                <div class="count">
+                    <p>15</p>
+                    <button id="plus-count"><i class="fa-solid fa-plus"></i></button>
+                    <button id="minus-count"><i class="fa-solid fa-minus"></i></button>
+                </div>
+            </div>
             <div class="selected-groups">
                 <ul class="selected-groups-list"></ul>
             </div>

@@ -5,20 +5,25 @@
 }
 
 header {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 h1 {
+    width:90%;
+    margin:0 5%;
     font-size: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
+    border-top:1px solid #949292;
+    padding:1rem 0;
+    border-bottom:1px solid #949292;
     text-align: center;
     color: #1f1f1f;
 }
 
 main {
     width: min(90%, 400px);
-    margin:5vh auto;
+    margin:10vh auto;
     margin-bottom:20vh;
     border:1px solid #dadada;
     border-radius: 8px;
@@ -33,40 +38,82 @@ button:active {
     padding:2rem;
 }
 
-#group-select {
+.select-option {
+    position: relative;
+    margin-bottom:2rem;
+}
+
+.labels {
     font-size:1rem;
     width:100%;
-    border-radius: 10px;
     color: #1f1f1f;
     font-weight: bold;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
 select {
-    width:100%;
+    width:80%;
     font-size:1rem;
     color: rgb(37, 37, 37);
     padding: 8px;
     background:none;
-    margin-bottom: 1rem;
-    border:0;
-    border-bottom:1.5px solid #696969;
+    border-radius: 5px;
+    border:0.5px solid #c9c9c9;
     appearance: none;
 }
 
 .add {
+    height: 100%;
+    position: absolute;
     font-size: 1rem;
-    width:20%;
-    margin-left:80%;
-    border:1.5px solid #24e67b;
-    color: #24e67b;
-    background:none;
-    padding: 4px;
+    border:1px solid #3df79a;
+    color: #3df79a;
+    background: none;
+    padding: 0 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left:1rem;
     text-align: center;
 }
+
+.count {
+    position: relative;
+    display: flex;
+    width:100px;
+    padding:5px;
+    justify-content: flex-start;
+    align-items: center;
+    border:1px solid #e2e2e2;
+    border-radius: 5px;
+}
+
+.count p {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#plus-count {
+    margin-left:auto;
+    font-size:0.7rem;
+    padding:0 5px;
+    color:black;
+    background: none;
+    border: 0;
+    border-right:1px solid black;
+}
+
+#minus-count {
+    padding:0 5px;
+    font-size: 0.7rem;
+    color: black;
+    background: none;
+    border: 0;
+}
+
 
 .selected-groups {
     margin:2rem 0;
@@ -122,12 +169,9 @@ h3 {
     align-items: center;
 }
 
-.previous {
-    background: none;
-    font-size:1.2rem;
-    color: #414141;
-    border:0;
-    margin-right:auto;
+.progress {
+    margin:auto;
+    font-size: 1rem;
 }
 
 .next {
@@ -135,7 +179,6 @@ h3 {
     font-size:1.2rem;
     color: #414141;
     border:0;
-    margin-left:auto;
 }
 
 .controller p {
@@ -182,6 +225,10 @@ h3 {
     font-family: 'Courier New', Courier, monospace;
     border:1px solid #949292;
     margin-bottom:1.5rem;
+}
+
+.usrinp input:focus {
+    outline: 0;
 }
 
 #status {
@@ -248,14 +295,32 @@ input.wrong-guess {
 }
 
 .result-total-specimens {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     font-size: 1.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom:1px solid #c9c9c9;
+    color: #414141;
+    padding-bottom:10px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.num {
+    font-size:1.5rem;
+    margin-right:1rem;
+    font-weight: bold;
 }
 
 .result-identified-specimens {
     margin-bottom: 3rem;
     font-size: 1.2rem;
+    color: #414141;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
     font-family: 'Courier New', Courier, monospace;
 }
 
